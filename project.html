@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="back" href="index.html">&larr; Back</a>
+  <aside class="info" id="info"></aside>
+  <main class="photos" id="photos"></main>
+  <div id="zoom"><img alt=""></div>
+
+  <script src="projects.js"></script>
+  <script>
+    const slug = new URLSearchParams(location.search).get("p");
+    const p = PROJECTS.find(x => x.slug === slug);
+    if (p) {
+      document.title = p.title;
+      document.getElementById("info").innerHTML =
+        `<h1>${p.title}</h1><div class="meta">${[p.date, p.types.join(", ")].filter(Boolean).join(" / ")}</div>
+         ${p.lat === null ? "" : `<div class="meta"><a target="_blank" href="https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lng}&zoom=11">${p.lat}, ${p.lng}</a></div>`}
+         <p>${p.description}</p>`;
+      const embeds = p.embeds.map(u => `<iframe src="${u}" allowfullscreen></iframe>`);
+      const media = p.photos.map(ph => ph.video
+        ? `<video controls preload="metadata" ${ph.img ? `poster="photos/${p.slug}/web/${ph.img}"` : ""} src="photos/${p.slug}/full/${ph.full}"></video>`
+        : `<img loading="lazy" src="photos/${p.slug}/web/${ph.img}" data-full="photos/${p.slug}/full/${ph.full}" alt="">`);
+      document.getElementById("photos").innerHTML = [...embeds, ...media].join("");
+    }
+    // click a photo to load the full-res original; click again to close
+    const zoom = document.getElementById("zoom");
+    document.getElementById("photos").addEventListener("click", e => {
+      if (!e.target.dataset.full) return;
+      zoom.querySelector("img").src = e.target.dataset.full;
+      zoom.style.display = "block";
+    });
+    zoom.addEventListener("click", () => zoom.style.display = "none");
+    addEventListener("keydown", e => { if (e.key === "Escape") zoom.style.display = "none"; });
+  </script>
+</body>
+</html>
