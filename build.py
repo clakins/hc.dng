@@ -5,11 +5,12 @@ import json, re, shutil, subprocess
 from pathlib import Path
 from PIL import Image, ImageOps
 
+SITE_DIR = Path(__file__).parent  # the folder this script is in
+
 # ---- YOUR TWO FOLDERS ----
 NOTES_DIR  = Path(r"C:\Users\photo\Documents\Henry's Sync Vault\Portfolio")  # one .md note per project
-PHOTOS_DIR = Path(r"C:\Users\photo\Documents\Portfolio")                 # one folder per project, full-res
+PHOTOS_DIR = SITE_DIR  # one folder per project (named like its note), next to this script
 # ------------------------------
-SITE_DIR = Path(__file__).parent
 PHOTO_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 VIDEO_EXTS = {".mp4", ".webm", ".m4v"}  # .mov often won't play outside Safari - export as .mp4
 
@@ -108,7 +109,7 @@ for note in sorted(NOTES_DIR.glob("*.md")):
 
     projects.append({
         "slug": slug,
-        "title": meta.get("title", note.stem),
+        "title": note.stem,  # the note's filename is always the project title
         "date": meta.get("date", ""),
         "types": [t.strip().lower() for t in meta.get("type", "").split(",") if t.strip()],
         "lat": lat,
