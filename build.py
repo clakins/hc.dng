@@ -73,8 +73,10 @@ for note in sorted(NOTES_DIR.glob("*.md")):
     slug = slugify(note.stem)
     src = PHOTOS_DIR / meta.get("folder", note.stem)
     files = sorted(p for p in src.iterdir() if p.suffix.lower() in PHOTO_EXTS | VIDEO_EXTS) if src.is_dir() else []
-    if not files:
-        print(f"  ! no photos or videos found for '{note.stem}' (looked in {src})")
+    if not src.is_dir():
+        print(f"  ! folder not found for '{note.stem}': {src}")
+    elif not files:
+        print(f"  ! folder is empty (no jpg/png/webp/mp4/webm): {src}")
 
     photos = []
     for f in files:
