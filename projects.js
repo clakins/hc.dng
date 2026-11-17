@@ -68,7 +68,88 @@ const PROJECTS = [
   "lng": null,
   "description": "A collection of photographs from the Balkans.\n\nInspired by Rebecca West's book *Black Lamb, Grey Falcon* which I was reading during this trip. Over two months, I saw Hungary, Croatia, Montenegro, Albania, Serbia, Greece, Macedonia, Bulgaria, and Turkey. It is my hope that these photos show the vast variety of life and culture across the Balkans that captured the interest of Rebecca West and myself, in turn.",
   "embeds": [],
-  "photos": []
+  "photos": [
+   {
+    "img": "DP2M0522.jpg",
+    "full": "DP2M0522.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M0589.jpg",
+    "full": "DP2M0589.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M0716.jpg",
+    "full": "DP2M0716.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M0834.jpg",
+    "full": "DP2M0834.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M0904.jpg",
+    "full": "DP2M0904.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M0970.jpg",
+    "full": "DP2M0970.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1001.jpg",
+    "full": "DP2M1001.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1049.jpg",
+    "full": "DP2M1049.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1124.jpg",
+    "full": "DP2M1124.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1261.jpg",
+    "full": "DP2M1261.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1433.jpg",
+    "full": "DP2M1433.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1456.jpg",
+    "full": "DP2M1456.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1703.jpg",
+    "full": "DP2M1703.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1731.jpg",
+    "full": "DP2M1731.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1794.jpg",
+    "full": "DP2M1794.jpg",
+    "video": false
+   },
+   {
+    "img": "DP2M1879.jpg",
+    "full": "DP2M1879.jpg",
+    "video": false
+   }
+  ]
  },
  {
   "slug": "yosemite",
