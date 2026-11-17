@@ -15,6 +15,11 @@ const PROJECTS = [
     "img": "",
     "full": "Indonesia.mp4",
     "video": true
+   },
+   {
+    "img": "thumbnail.jpg",
+    "full": "thumbnail.jpg",
+    "video": false
    }
   ]
  },
@@ -30,6 +35,11 @@ const PROJECTS = [
   "description": "Some videos taken on Catalina Island during a Trans-Catalina Trail backpacking trip with my sister. The videos convey the feeling of a tired Saturday on Catalina Island, a feeling my sister and I jokingly refer to as 'Heat Exhaustion.' \n\nThis feeling of apathy and dizzy peace is something I found on the island and think of often now that I don't know when I'll be there again.",
   "embeds": [],
   "photos": [
+   {
+    "img": "",
+    "full": "Heat Exhaustion (0).mp4",
+    "video": true
+   },
    {
     "img": "",
     "full": "Heat Exhaustion (1).mp4",
@@ -51,9 +61,9 @@ const PROJECTS = [
     "video": true
    },
    {
-    "img": "",
-    "full": "Heat Exhaustion.mp4",
-    "video": true
+    "img": "thumbnail.jpg",
+    "full": "thumbnail.jpg",
+    "video": false
    }
   ]
  },
