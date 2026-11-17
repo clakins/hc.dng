@@ -6,6 +6,7 @@ const PROJECTS = [
   "types": [
    "video"
   ],
+  "cover": "thumbnail.jpg",
   "lat": null,
   "lng": null,
   "description": "A quick recreation of a video I saw on Instagram with this fun song from a Bollywood (??) movie. Edited in Capcut with my own phone videos.",
@@ -15,11 +16,6 @@ const PROJECTS = [
     "img": "",
     "full": "Indonesia.mp4",
     "video": true
-   },
-   {
-    "img": "thumbnail.jpg",
-    "full": "thumbnail.jpg",
-    "video": false
    }
   ]
  },
@@ -30,6 +26,7 @@ const PROJECTS = [
   "types": [
    "video"
   ],
+  "cover": "thumbnail.jpg",
   "lat": null,
   "lng": null,
   "description": "Some videos taken on Catalina Island during a Trans-Catalina Trail backpacking trip with my sister. The videos convey the feeling of a tired Saturday on Catalina Island, a feeling my sister and I jokingly refer to as 'Heat Exhaustion.' \n\nThis feeling of apathy and dizzy peace is something I found on the island and think of often now that I don't know when I'll be there again.",
@@ -59,11 +56,6 @@ const PROJECTS = [
     "img": "",
     "full": "Heat Exhaustion (5).mp4",
     "video": true
-   },
-   {
-    "img": "thumbnail.jpg",
-    "full": "thumbnail.jpg",
-    "video": false
    }
   ]
  },
@@ -74,6 +66,7 @@ const PROJECTS = [
   "types": [
    "photo"
   ],
+  "cover": "DP2M0522.jpg",
   "lat": null,
   "lng": null,
   "description": "A collection of photographs from the Balkans.\n\nInspired by Rebecca West's book *Black Lamb, Grey Falcon* which I was reading during this trip. Over two months, I saw Hungary, Croatia, Montenegro, Albania, Serbia, Greece, Macedonia, Bulgaria, and Turkey. It is my hope that these photos show the vast variety of life and culture across the Balkans that captured the interest of Rebecca West and myself, in turn.",
@@ -168,6 +161,7 @@ const PROJECTS = [
   "types": [
    "photo"
   ],
+  "cover": "yosemite1.jpg",
   "lat": null,
   "lng": null,
   "description": "A sunset progression of the Yosemite Valley taken during my Spring Break camping trip.\n\nPhotos taken on the same day between 4 and 7pm. Shot on Sigma DP2S.",
@@ -197,6 +191,7 @@ const PROJECTS = [
   "types": [
    "photo"
   ],
+  "cover": "bigsur1.jpg",
   "lat": null,
   "lng": null,
   "description": "A collection of photographs from a road trip through Big Sur, overlaid with quotes from the epic poem _Sea_ by Jack Kerouac. One of my favorite projects so far and something that holds a deep nostalgia for me. \n\nI will always remember this as my first real road trip and my last real spring break.",
@@ -246,6 +241,7 @@ const PROJECTS = [
   "types": [
    "photo"
   ],
+  "cover": "hc1.jpg",
   "lat": null,
   "lng": null,
   "description": "A collection of photographs of surviving motels and signage along the Historic Miracle Mile in Tucson, Arizona. Documented following the demolition of three historic motels by Pima County Community College in the Summer of 2025. \n\n35mm film developed and scanned at the University of Arizona. Originally a project for ART 246 Darkroom Photography.",

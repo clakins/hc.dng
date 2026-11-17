@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Henry - Photography &amp; Projects</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png">
 </head>
 <body class="home">
   <header>
@@ -34,7 +33,7 @@
         `<a href="#${t === "all" ? "" : t}" class="${(type || "all") === t ? "on" : ""}">${t}</a>`).join("");
       grid.innerHTML = PROJECTS.filter(p => !type || p.types.includes(type)).map(p => `
         <a href="project.html?p=${p.slug}">
-          ${(c => c ? `<img loading="lazy" src="photos/${p.slug}/thumb/${c.img}" alt="">` : `<img alt="">`)(p.photos.find(x => x.img))}
+          ${p.cover ? `<img loading="lazy" src="photos/${p.slug}/thumb/${p.cover}" alt="">` : `<img alt="">`}
           <span>${p.title} <small>${p.date.slice(0, 4)}</small></span>
         </a>`).join("");
     }

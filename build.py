@@ -99,8 +99,15 @@ for note in sorted(NOTES_DIR.glob("*.md")):
                 print(f"  ! {f.name} is over 90MB - GitHub rejects files over 100MB")
         photos.append({"img": jpg if source.exists() else "", "full": f.name, "video": is_video})
 
-    thumb = meta.get("thumbnail", "")  # optional: filename of the thumbnail photo
-    photos.sort(key=lambda p: p["full"] != thumb)  # thumbnail first; sort is stable so the rest keep order
+    types = [t.strip().lower() for t in meta.get("type", "").split(",") if t.strip()]
+    thumb = meta.get("thumbnail", "")  # optional: filename of the homepage thumbnail
+    if "video" in types and not thumb:  # video projects: a photo named thumbnail.jpg (etc.) is picked up automatically
+        thumb = next((p["full"] for p in photos if Path(p["full"]).stem.lower() == "thumbnail"), "")
+    cover = next((p for p in photos if p["full"] == thumb and p["img"]), None) or next((p for p in photos if p["img"]), None)
+    if "video" in types and cover and not cover["video"] and cover["full"] == thumb:
+        photos.remove(cover)  # video projects: the thumbnail photo is only used on the homepage, not the project page
+    else:
+        photos.sort(key=lambda p: p["full"] != thumb)  # otherwise the thumbnail photo goes first; the rest keep order
 
     try:  # location: "36.27, -121.81" (latitude, longitude)
         lat, lng = [float(x) for x in meta.get("location", "").split(",")]
@@ -111,7 +118,8 @@ for note in sorted(NOTES_DIR.glob("*.md")):
         "slug": slug,
         "title": note.stem,  # the note's filename is always the project title
         "date": meta.get("date", ""),
-        "types": [t.strip().lower() for t in meta.get("type", "").split(",") if t.strip()],
+        "types": types,
+        "cover": cover["img"] if cover else "",
         "lat": lat,
         "lng": lng,
         "description": body,
